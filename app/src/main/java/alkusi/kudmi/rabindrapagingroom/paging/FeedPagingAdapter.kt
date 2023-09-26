@@ -1,5 +1,4 @@
 package alkusi.kudmi.rabindrapagingroom.paging
-
 import alkusi.kudmi.rabindrapagingroom.databinding.FeedItemBinding
 import alkusi.kudmi.rabindrapagingroom.model.MyFeedData
 import android.view.LayoutInflater
@@ -8,9 +7,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-
 class FeedPagingAdapter():PagingDataAdapter<MyFeedData,FeedPagingAdapter.ViewHolder>(COMPARATOR()) {
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
     val binding = FeedItemBinding.inflate(LayoutInflater.from(parent.context))
         return ViewHolder(binding)
@@ -18,12 +15,11 @@ class FeedPagingAdapter():PagingDataAdapter<MyFeedData,FeedPagingAdapter.ViewHol
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
         item?.let {
+            
             holder.bindData(it)
         }
 
     }
-
-
     inner class ViewHolder(val binding: FeedItemBinding):RecyclerView.ViewHolder(binding.root)
     {
 fun bindData(data: MyFeedData)

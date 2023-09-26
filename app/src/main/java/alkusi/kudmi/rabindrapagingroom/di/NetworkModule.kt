@@ -1,5 +1,4 @@
 package alkusi.kudmi.rabindrapagingroom.di
-
 import alkusi.kudmi.rabindrapagingroom.Network.MyApi
 import alkusi.kudmi.rabindrapagingroom.Network.MyInterceptor
 import alkusi.kudmi.rabindrapagingroom.Utils.Constants.BASE_URL
@@ -13,7 +12,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
 @InstallIn(SingletonComponent::class)
 @Module
 class NetworkModule {
@@ -29,7 +27,6 @@ class NetworkModule {
     {
         return Retrofit.Builder().baseUrl(BASE_URL).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).build()
     }
-
     @Singleton
     @Provides
     fun getMyApi(retrofit: Retrofit):MyApi

@@ -75,6 +75,10 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     //ok http
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    val activity_version = "1.7.2"
+
+    // Kotlin
+    implementation("androidx.activity:activity-ktx:$activity_version")
 
 
 }

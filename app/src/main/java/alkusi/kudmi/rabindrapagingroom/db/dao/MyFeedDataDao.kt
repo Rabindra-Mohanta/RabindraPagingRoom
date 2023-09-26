@@ -10,5 +10,12 @@ import javax.inject.Inject
 
 @Dao
 interface MyFeedDataDao {
- 
+    @Query("SELECT * FROM MyFeedData")
+    fun getQuotes(): androidx.paging.PagingSource<Int, MyFeedData>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addQuotes(quotes: List<MyFeedData>)
+
+    @Query("DELETE FROM MyFeedData")
+    suspend fun deleteQuotes()
 }
